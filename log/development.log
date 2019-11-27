@@ -6743,3 +6743,785 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 736ms (Views: 734.4ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8445024276154775190', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20191124143147)
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_users_on_name`  (`name`)) ENGINE=InnoDB[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20191124143147')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-11-24 14:35:42', '2019-11-24 14:35:42')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8445024276154775190')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+Started GET "/" for ::1 at 2019-11-26 06:42:26 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (5.3ms)
+  Rendered messages/_main_chat.html.haml (10.2ms)
+  Rendered messages/index.html.haml within layouts/application (27.5ms)
+Completed 200 OK in 324ms (Views: 314.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 21:13:29 +0900
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-26 21:13:29 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (1.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 766ms (Views: 746.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-26 21:14:13 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (1.9ms)
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_haml__1619744508292880674_70133203905100 at /Users/ichikawahidehisa/projects/chat-space/app/views/devise/registrations/new.html.haml:9)
+  Rendered devise/registrations/new.html.haml within layouts/application (12.2ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-26 21:17:12 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (1.4ms)
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_haml__1619744508292880674_70133135969200 at /Users/ichikawahidehisa/projects/chat-space/app/views/devise/registrations/new.html.haml:9)
+  Rendered devise/registrations/new.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-26 21:40:59 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (1.4ms)
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_haml__1619744508292880674_70133144576360 at /Users/ichikawahidehisa/projects/chat-space/app/views/devise/registrations/new.html.haml:9)
+  Rendered devise/registrations/new.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 46ms (Views: 37.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-26 22:00:57 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (1.3ms)
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_haml__1619744508292880674_70133204302520 at /Users/ichikawahidehisa/projects/chat-space/app/views/devise/registrations/new.html.haml:9)
+  Rendered devise/registrations/new.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 40ms (Views: 32.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for ::1 at 2019-11-26 22:01:27 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OEQABzSKH8RNCaWEOKmWL/SPLgFXvHLOLIBaP8Uz5acQNX55tDBgvBPsmTdWV4go9zPfjIszymJ4rUwkJt9hg==", "user"=>{"name"=>"ooyamaneko", "email"=>"aaaaaa@aaaaa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (6.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'aaaaaa@aaaaa' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('ooyamaneko', 'aaaaaa@aaaaa', '$2a$11$BQ5lG4SZs4iyVP37UME0geiMN8iAKjnlghY2G54MkPa70gfpFo7gm', '2019-11-26 13:01:27', '2019-11-26 13:01:27')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 140ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 22:01:27 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (93.4ms)
+  Rendered messages/index.html.haml within layouts/application (95.7ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `fa_icon' for #<#<Class:0x00007f9250b365e8>:0x00007f9250b351e8>):
+     5:     %ul.header__lists
+     6:       %li.list
+     7:         = link_to do
+     8:           = fa_icon 'pencil-square-o', class: 'icon'
+     9:       %li.list
+    10:         = link_to edit_user_path(current_user) do
+    11:           = fa_icon 'cog', class: 'icon'
+  
+app/views/messages/_side_bar.html.haml:8:in `block in _app_views_messages__side_bar_html_haml___1978105098599622835_70133197830040'
+app/views/messages/_side_bar.html.haml:7:in `_app_views_messages__side_bar_html_haml___1978105098599622835_70133197830040'
+app/views/messages/index.html.haml:2:in `_app_views_messages_index_html_haml___3758266351058629260_70133197944560'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.0ms)
+Started GET "/" for ::1 at 2019-11-26 22:03:12 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (115.3ms)
+  Rendered messages/index.html.haml within layouts/application (118.2ms)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `fa_icon' for #<#<Class:0x00007f9250b365e8>:0x00007f9252c08cf8>):
+     8:           = icon('fa', 'edit',class: 'icon')
+     9:       %li.list
+    10:         = link_to edit_user_path(current_user) do
+    11:           = fa_icon 'cog', class: 'icon'
+    12:   .groups
+    13:     .group
+    14:       .group__name
+  
+app/views/messages/_side_bar.html.haml:11:in `block in _app_views_messages__side_bar_html_haml___1978105098599622835_70133215053100'
+app/views/messages/_side_bar.html.haml:10:in `_app_views_messages__side_bar_html_haml___1978105098599622835_70133215053100'
+app/views/messages/index.html.haml:2:in `_app_views_messages_index_html_haml___3758266351058629260_70133215152880'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.2ms)
+Started GET "/" for ::1 at 2019-11-26 22:03:57 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.4ms)
+  Rendered messages/_main_chat.html.haml (7.3ms)
+  Rendered messages/index.html.haml within layouts/application (14.5ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 22:04:58 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.5ms)
+  Rendered messages/_main_chat.html.haml (5.3ms)
+  Rendered messages/index.html.haml within layouts/application (12.5ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 22:12:33 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.2ms)
+  Rendered messages/_main_chat.html.haml (5.1ms)
+  Rendered messages/index.html.haml within layouts/application (11.9ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 22:12:35 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.0ms)
+  Rendered messages/_main_chat.html.haml (10.2ms)
+  Rendered messages/index.html.haml within layouts/application (16.8ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 22:47:33 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (4.9ms)
+  Rendered messages/_main_chat.html.haml (9.6ms)
+  Rendered messages/index.html.haml within layouts/application (22.8ms)
+Completed 500 Internal Server Error in 659ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$light_blue".):
+    4:     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    5:     %title ChatSpace
+    6:     = csrf_meta_tags
+    7:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    8:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    9:   %body
+   10:     = render 'layouts/notifications'
+  
+app/assets/stylesheets/_flash.scss:3
+app/assets/stylesheets/application.scss:5
+app/views/layouts/application.html.haml:7:in `_app_views_layouts_application_html_haml___2733783417746005828_70217607493120'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.4ms)
+Started GET "/" for ::1 at 2019-11-26 22:47:59 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (5.7ms)
+  Rendered messages/_main_chat.html.haml (6.9ms)
+  Rendered messages/index.html.haml within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$light_blue".):
+    4:     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    5:     %title ChatSpace
+    6:     = csrf_meta_tags
+    7:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    8:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    9:   %body
+   10:     = render 'layouts/notifications'
+  
+app/assets/stylesheets/_flash.scss:3
+app/assets/stylesheets/application.scss:5
+app/views/layouts/application.html.haml:7:in `_app_views_layouts_application_html_haml___2733783417746005828_70217654935980'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.5ms)
+Started GET "/" for ::1 at 2019-11-26 22:56:28 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.5ms)
+  Rendered messages/_main_chat.html.haml (6.7ms)
+  Rendered messages/index.html.haml within layouts/application (14.2ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 758ms (Views: 755.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:03:14 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (5.1ms)
+  Rendered messages/_main_chat.html.haml (8.7ms)
+  Rendered messages/index.html.haml within layouts/application (22.1ms)
+  Rendered layouts/_notifications.html.haml (1.3ms)
+Completed 200 OK in 226ms (Views: 206.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:03:17 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (5.7ms)
+  Rendered messages/_main_chat.html.haml (8.2ms)
+  Rendered messages/index.html.haml within layouts/application (18.5ms)
+  Rendered layouts/_notifications.html.haml (1.7ms)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:03:26 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (7.1ms)
+  Rendered messages/_main_chat.html.haml (6.4ms)
+  Rendered messages/index.html.haml within layouts/application (18.0ms)
+  Rendered layouts/_notifications.html.haml (1.4ms)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:03:50 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (4.2ms)
+  Rendered messages/_main_chat.html.haml (6.8ms)
+  Rendered messages/index.html.haml within layouts/application (15.5ms)
+  Rendered layouts/_notifications.html.haml (2.2ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:03:58 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (5.2ms)
+  Rendered messages/_main_chat.html.haml (6.3ms)
+  Rendered messages/index.html.haml within layouts/application (16.9ms)
+  Rendered layouts/_notifications.html.haml (1.3ms)
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:03:59 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (5.0ms)
+  Rendered messages/_main_chat.html.haml (7.2ms)
+  Rendered messages/index.html.haml within layouts/application (16.7ms)
+  Rendered layouts/_notifications.html.haml (1.4ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:04:03 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.6ms)
+  Rendered messages/_main_chat.html.haml (7.0ms)
+  Rendered messages/index.html.haml within layouts/application (14.7ms)
+  Rendered layouts/_notifications.html.haml (1.4ms)
+Completed 200 OK in 43ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2019-11-26 23:04:09 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/edit.html.haml within layouts/application
+  Rendered users/edit.html.haml within layouts/application (20.9ms)
+  Rendered layouts/_notifications.html.haml (1.4ms)
+Completed 200 OK in 49ms (Views: 44.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for ::1 at 2019-11-26 23:04:11 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RFbLhff5OL9SC2e/frBNnIJXuROMpOkW6hqaw+nYqPFSY0zAnJkuFUJRR0jH1KTFR7nSosmg+N8uzzfchIPm4w==", "user"=>{"name"=>"ooyamaneko", "email"=>"aaaaaa@aaaaa"}, "commit"=>"Update", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:04:11 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (4.9ms)
+  Rendered messages/_main_chat.html.haml (6.8ms)
+  Rendered messages/index.html.haml within layouts/application (16.3ms)
+  Rendered layouts/_notifications.html.haml (1.4ms)
+Completed 200 OK in 44ms (Views: 40.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:08:59 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.7ms)
+  Rendered messages/_main_chat.html.haml (6.1ms)
+  Rendered messages/index.html.haml within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "@import "./colors"": expected selector or at-rule, was "@import "./flash";"):
+    4:     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    5:     %title ChatSpace
+    6:     = csrf_meta_tags
+    7:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    8:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    9:   %body
+   10:     = render 'layouts/notifications'
+  
+app/assets/stylesheets/application.scss:6
+app/views/layouts/application.html.haml:7:in `_app_views_layouts_application_html_haml___1962798622772640934_70295369371420'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.0ms)
+Started GET "/" for ::1 at 2019-11-26 23:09:35 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.5ms)
+  Rendered messages/_main_chat.html.haml (5.4ms)
+  Rendered messages/index.html.haml within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "@import "./colors"": expected selector or at-rule, was "$side_header_fo..."):
+    4:     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    5:     %title ChatSpace
+    6:     = csrf_meta_tags
+    7:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    8:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    9:   %body
+   10:     = render 'layouts/notifications'
+  
+app/assets/stylesheets/application.scss:10
+app/views/layouts/application.html.haml:7:in `_app_views_layouts_application_html_haml___1962798622772640934_70295318045620'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.9ms)
+Started GET "/" for ::1 at 2019-11-26 23:16:30 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.6ms)
+  Rendered messages/_main_chat.html.haml (6.4ms)
+  Rendered messages/index.html.haml within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "@import "./colors"": expected selector or at-rule, was "@import "./user";"):
+    4:     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    5:     %title ChatSpace
+    6:     = csrf_meta_tags
+    7:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    8:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    9:   %body
+   10:     = render 'layouts/notifications'
+  
+app/assets/stylesheets/application.scss:5
+app/views/layouts/application.html.haml:7:in `_app_views_layouts_application_html_haml___1962798622772640934_70295307388340'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.0ms)
+Started GET "/" for ::1 at 2019-11-26 23:21:33 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.7ms)
+  Rendered messages/_main_chat.html.haml (8.2ms)
+  Rendered messages/index.html.haml within layouts/application (15.9ms)
+  Rendered layouts/_notifications.html.haml (1.3ms)
+Completed 200 OK in 82ms (Views: 78.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:24:24 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.6ms)
+  Rendered messages/_main_chat.html.haml (6.1ms)
+  Rendered messages/index.html.haml within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "@import "./colors"": expected selector or at-rule, was "$side_header_fo..."):
+    4:     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    5:     %title ChatSpace
+    6:     = csrf_meta_tags
+    7:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    8:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    9:   %body
+   10:     = render 'layouts/notifications'
+  
+app/assets/stylesheets/application.scss:8
+app/views/layouts/application.html.haml:7:in `_app_views_layouts_application_html_haml___1962798622772640934_70295317675920'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.2ms)
+Started GET "/" for ::1 at 2019-11-26 23:24:47 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (7.6ms)
+  Rendered messages/_main_chat.html.haml (9.1ms)
+  Rendered messages/index.html.haml within layouts/application (20.8ms)
+  Rendered layouts/_notifications.html.haml (1.9ms)
+Completed 200 OK in 692ms (Views: 688.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:24:49 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.6ms)
+  Rendered messages/_main_chat.html.haml (5.8ms)
+  Rendered messages/index.html.haml within layouts/application (13.4ms)
+  Rendered layouts/_notifications.html.haml (1.4ms)
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 23:33:53 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.8ms)
+  Rendered messages/_main_chat.html.haml (6.2ms)
+  Rendered messages/index.html.haml within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 461ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$light_blue".):
+    4:     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    5:     %title ChatSpace
+    6:     = csrf_meta_tags
+    7:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    8:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    9:   %body
+   10:     = render 'layouts/notifications'
+  
+app/assets/stylesheets/_flash.scss:3
+app/assets/stylesheets/application.scss:5
+app/views/layouts/application.html.haml:7:in `_app_views_layouts_application_html_haml___1962798622772640934_70295369824100'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.8ms)
+Started GET "/" for ::1 at 2019-11-26 23:34:14 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.4ms)
+  Rendered messages/_main_chat.html.haml (5.4ms)
+  Rendered messages/index.html.haml within layouts/application (12.6ms)
+  Rendered layouts/_notifications.html.haml (1.4ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 20:54:17 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.5ms)
+  Rendered messages/index.html.haml within layouts/application (11.2ms)
+  Rendered layouts/_notifications.html.haml (2.9ms)
+Completed 200 OK in 812ms (Views: 809.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:10:44 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/index.html.haml within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_side_bar with {:locale=>[:ja], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/Users/ichikawahidehisa/projects/chat-space/app/views"
+  * "/Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.7.1/app/views"
+):
+    1: .wrapper
+    2:   = render 'shared/side_bar'
+    3: 
+    4: .chat
+    5:   .header
+  
+app/views/messages/index.html.haml:2:in `_app_views_messages_index_html_haml___4172053032786033360_70295384470500'
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ichikawahidehisa/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.2ms)
+Started GET "/" for ::1 at 2019-11-27 21:11:41 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (4.0ms)
+  Rendered messages/index.html.haml within layouts/application (13.1ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 634ms (Views: 631.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:13:26 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.5ms)
+  Rendered messages/index.html.haml within layouts/application (11.1ms)
+  Rendered layouts/_notifications.html.haml (1.3ms)
+Completed 200 OK in 627ms (Views: 624.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:16:51 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.5ms)
+  Rendered messages/index.html.haml within layouts/application (10.8ms)
+  Rendered layouts/_notifications.html.haml (1.6ms)
+Completed 200 OK in 696ms (Views: 693.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:22:00 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.7ms)
+  Rendered messages/index.html.haml within layouts/application (12.7ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:30:19 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.9ms)
+  Rendered messages/index.html.haml within layouts/application (11.2ms)
+  Rendered layouts/_notifications.html.haml (1.5ms)
+Completed 200 OK in 700ms (Views: 697.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:32:27 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.5ms)
+  Rendered messages/index.html.haml within layouts/application (11.6ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:43:57 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.9ms)
+  Rendered messages/index.html.haml within layouts/application (23.4ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 686ms (Views: 682.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:44:52 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.8ms)
+  Rendered messages/index.html.haml within layouts/application (11.1ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 673ms (Views: 670.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:48:42 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.2ms)
+  Rendered messages/index.html.haml within layouts/application (10.6ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:49:50 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.5ms)
+  Rendered messages/index.html.haml within layouts/application (10.8ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:50:36 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (5.4ms)
+  Rendered messages/index.html.haml within layouts/application (24.1ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 700ms (Views: 696.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:51:05 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.4ms)
+  Rendered messages/index.html.haml within layouts/application (10.9ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 693ms (Views: 690.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:51:50 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.4ms)
+  Rendered messages/index.html.haml within layouts/application (10.3ms)
+  Rendered layouts/_notifications.html.haml (1.4ms)
+Completed 200 OK in 652ms (Views: 649.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:52:10 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.3ms)
+  Rendered messages/index.html.haml within layouts/application (10.5ms)
+  Rendered layouts/_notifications.html.haml (1.3ms)
+Completed 200 OK in 636ms (Views: 633.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:54:27 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (3.3ms)
+  Rendered messages/index.html.haml within layouts/application (10.9ms)
+  Rendered layouts/_notifications.html.haml (1.2ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-27 21:56:52 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (4.6ms)
+  Rendered messages/index.html.haml within layouts/application (13.0ms)
+  Rendered layouts/_notifications.html.haml (1.7ms)
+Completed 200 OK in 638ms (Views: 635.4ms | ActiveRecord: 0.3ms)
+
+
